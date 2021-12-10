@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-wildcard-host
+  annotations: {
+    "virtual-server-ip" : "172.23.133.10",
+    "virtual-server-port" : "port1",
+    "fortiadc-ip" : "10.0.100.133",
+    "fortiadc-login" : "fad-login",
+    "fortiadc-vdom" : "root"
+  }
+
+spec:
+  ingressClassName: fadc-ingress-controller
+  rules:
+  - host: "foo.bar.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/bar"
+        backend:
+          service:
+            name: service1
+            port:
+              number: 80
+  - host: "*.foo.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/foo"
+        backend:
+          service:
+            name: service2
+            port:
+              number: 80
+
