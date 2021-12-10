@@ -22,4 +22,12 @@
     kubectl get -n fortiadc-ingress deployments
     
     kubectl get -n fortiadc-ingress pods
+ 
+## Upgrading chart
 
+    helm repo update
+    helm upgrade -n fortiadc-ingress first-release fortiadc-ingress-controller/fadc-k8s-ctrl
+
+## Uninstall Chart
+
+    helm uninstall -n fortiadc-ingress first-release
