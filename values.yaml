@@ -1,0 +1,45 @@
+# Default values for fadc-k8s-ctrl.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+image:
+  repository: ytlai/fortiadc-k8s-ctrl
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "e1.0"
+
+imagePullSecrets:
+  - name: regcred
+
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: "fortiadc-ingress"
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+controller:
+  ingressClassResource:
+    name: "fadc-ingress-controller"
+    enabled: true
+    default: true
+    controllerValue: "fortinet.com/fadc-ingress-controller"
