@@ -29,7 +29,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: tagging
-        run: git tag "${{ needs.tag.outputs.name }}" -m "Version:${{ needs.tag.outputs.name }}"
+        run: | 
+          git config user.name "ytlai"
+          git config user.email lynn22414@gmail.com
+          git tag "${{ needs.tag.outputs.name }}" -m "Version:${{ needs.tag.outputs.name }}"
       - name: create-templates-zip
         run: zip -r ./fad_ingress_helm_repo.zip ./*
       - name: upload-templates-zip
