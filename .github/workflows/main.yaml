@@ -1,10 +1,10 @@
 on:
   # Trigger the workflow on push or pull request,
   # but only for the main branch
-# push:
+#  push:
 #   tags:
 #     - '*'
-  pull_request:
+  pull_request_target:
     branches:
       - main
   # Also trigger on page_build, as well as release created events
@@ -13,13 +13,26 @@ on:
   #  types: # This configuration does not affect the page_build event above
   #  - created
 jobs:
+  tag:
+    runs-on: ubuntu-latest
+    outputs:
+      name: ${{ steps.generate_tag.outputs.name }}
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - name: Generate tag name
+        id: generate_tag
+        run: echo "::set-output name=name::v$(date -d "$(git show -s --format=%ci)" +'%Y.%-m.%-d')"
   build:
-    name: build-fortiadc-ingress 
+    name: build-fortiadc-ingress
+    needs: [tag]
     runs-on: ubuntu-latest
     steps:
-      - uses: olegtarasov/get-tag@v2.1
-        id: tagName
       - uses: actions/checkout@v2
+      - name: tagging
+        run: | 
+          git config user.name "ytlai"
+          git config user.email lynn22414@gmail.com
+          git tag "${{ needs.tag.outputs.name }}" -m "Version:${{ needs.tag.outputs.name }}"
       - name: create-templates-zip
         run: zip -r ./fad_ingress_helm_repo.zip ./*
       - name: upload-templates-zip
@@ -28,6 +41,6 @@ jobs:
           repo_token: ${{secrets.GITHUB_TOKEN}}
           file: ./fad_ingress_helm_repo.zip
           asset_name: fortiadc-ingress.zip
-          tag: ${{steps.tagName.outputs.tag}}
+          tag: ${{needs.tag.outputs.name}}
           overwrite: true
           body: "FortiADC Ingress Release"
