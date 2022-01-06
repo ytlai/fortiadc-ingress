@@ -1,0 +1,33 @@
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+# push:
+#   tags:
+#     - '*'
+  pull_request:
+    branches:
+      - main
+  # Also trigger on page_build, as well as release created events
+  #page_build:
+  #release:
+  #  types: # This configuration does not affect the page_build event above
+  #  - created
+jobs:
+  build:
+    name: build-fortiadc-ingress 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: olegtarasov/get-tag@v2.1
+        id: tagName
+      - uses: actions/checkout@v2
+      - name: create-templates-zip
+        run: zip -r ./fad_ingress_helm_repo.zip ./*
+      - name: upload-templates-zip
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{secrets.GITHUB_TOKEN}}
+          file: ./fad_ingress_helm_repo.zip
+          asset_name: fortiadc-ingress.zip
+          tag: ${{steps.tagName.outputs.tag}}
+          overwrite: true
+          body: "FortiADC Ingress Release"
