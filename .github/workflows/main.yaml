@@ -4,7 +4,7 @@ on:
 #  push:
 #   tags:
 #     - '*'
-  pull_request_target:
+  pull_request:
     branches:
       - main
   # Also trigger on page_build, as well as release created events
