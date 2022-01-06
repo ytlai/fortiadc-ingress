@@ -15,6 +15,7 @@ on:
 jobs:
   tag:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
     outputs:
       name: ${{ steps.generate_tag.outputs.name }}
     steps:
@@ -26,6 +27,7 @@ jobs:
     name: build-fortiadc-ingress
     needs: [tag]
     runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
     steps:
       - uses: actions/checkout@v2
       - name: tagging
