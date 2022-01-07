@@ -11,6 +11,6 @@ entries:
     urls:
 #    - https://github.com/ytlai/fortiadc-ingress/archive/refs/tags/v1.0.0.tar.gz
 #    - https://github.com/ytlai/fortiadc-ingress/releases/download/v2022.1.6/fortiadc-ingress.zip
-    - https://github.com/ytlai/fortiadc-ingress/archive/refs/tags/v2022.1.6.tar.gz
+    - https://github.com/ytlai/fortiadc-ingress/releases/latest/download/fortiadc-ingress.tar.gz
     version: v1.0.0
 generated: "2021-08-23T08:21:32.196501008Z"
