@@ -15,6 +15,7 @@ on:
       - ready_for_review
 
   # Try enabling auto-merge for the specified pull request or all open pull requests if none is specified.
+
   #workflow_dispatch:
   #  inputs:
   #    pull-request:
@@ -25,7 +26,7 @@ jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
-      - uses: reitermarkus/automerge@v2
+      - uses: reitermarkus/automerge@vv1.5.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           merge-method: merge
