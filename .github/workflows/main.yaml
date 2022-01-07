@@ -39,14 +39,25 @@ jobs:
           git config user.name "ytlai"
           git config user.email lynn22414@gmail.com
           git tag "${{ needs.tag.outputs.name }}" -m "Version:${{ needs.tag.outputs.name }}"
-      - name: create-templates-zip
-        run: zip -r ./fad_ingress_helm_repo.zip ./*
-      - name: upload-templates-zip
-        uses: svenstaro/upload-release-action@v2
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          repo_token: ${{secrets.GITHUB_TOKEN}}
-          file: ./fad_ingress_helm_repo.zip
-          asset_name: fortiadc-ingress.zip
-          tag: ${{needs.tag.outputs.name}}
-          overwrite: true
+          tag_name: ${{needs.tag.outputs.name}}
+          release_name: Release ${{needs.tag.outputs.name}}
           body: "FortiADC Ingress Release"
+          draft: false
+          prerelease: false
+      #- name: create-templates-zip
+      #  run: zip -r ./fad_ingress_helm_repo.zip ./*
+      #- name: upload-templates-zip
+      #  uses: svenstaro/upload-release-action@v2
+      #  with:
+      #    repo_token: ${{secrets.GITHUB_TOKEN}}
+      #    file: ./fad_ingress_helm_repo.zip
+      #    asset_name: fortiadc-ingress.zip
+      #    tag: ${{needs.tag.outputs.name}}
+      #    overwrite: true
+      #    body: "FortiADC Ingress Release"
