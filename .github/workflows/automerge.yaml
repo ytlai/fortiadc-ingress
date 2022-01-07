@@ -15,19 +15,19 @@ on:
       - ready_for_review
 
   # Try enabling auto-merge for the specified pull request or all open pull requests if none is specified.
-  workflow_dispatch:
-    inputs:
-      pull-request:
-        description: Pull Request Number
-        required: false
+
+  #workflow_dispatch:
+  #  inputs:
+  #    pull-request:
+  #      description: Pull Request Number
+  #      required: false
 
 jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
-      - uses: reitermarkus/automerge@v2
+      - uses: reitermarkus/automerge@vv1.5.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          merge-method: rebase
-          pull-request: ${{ github.event.inputs.pull-request }}
+          merge-method: merge
           dry-run: false
