@@ -28,6 +28,5 @@ jobs:
       - uses: reitermarkus/automerge@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          merge-method: rebase
-          pull-request: ${{ github.event.inputs.pull-request }}
+          merge-method: merge
           dry-run: false
