@@ -14,7 +14,7 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{secrets.GITHUB_TOKEN}}
-          release_name: Release ${{needs.tag.outputs.name}}
+          release_name: Release ${{github.ref}}
           file: ./fortiadc-ingress.tar.gz
           asset_name: fortiadc-ingress.tar.gz
           tag: ${{github.ref}}
