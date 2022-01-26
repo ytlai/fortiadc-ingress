@@ -6,7 +6,7 @@ image:
   repository: ytlai/fortiadc-k8s-ctrl
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "e1.2"
+  tag: "e2.7"
 
 imagePullSecrets:
   - name: regcred
