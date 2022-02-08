@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: 
+  name: default-backend
   annotations: {
     "fortiadc-ip" : "10.0.100.133",
     "fortiadc-login" : "fad-login",
