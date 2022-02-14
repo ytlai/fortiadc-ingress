@@ -26,7 +26,7 @@ spec:
             name: service1
             port:
               number: 1241
-      - path: /
+      - path: /hello
         pathType: Prefix
         backend:
           service:
