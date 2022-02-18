@@ -17,7 +17,7 @@ spec:
     http:
       paths:
       - pathType: Prefix
-        path: "/bar"
+        path: "/info"
         backend:
           service:
             name: service1
@@ -27,7 +27,7 @@ spec:
     http:
       paths:
       - pathType: Prefix
-        path: "/foo"
+        path: "/hello"
         backend:
           service:
             name: service2
