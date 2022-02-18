@@ -31,9 +31,9 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: service-1237
+            name: default-http-backend
             port:
-              number: 1237
+              number: 80
   - host: b.foo.com
     http:
       paths:
@@ -41,9 +41,9 @@ spec:
         pathType: Exact
         backend:
           service:
-            name: service-1240
+            name: service1
             port:
-              number: 1240
+              number: 1241
   - host: c.foo.com
     http:
       paths:
@@ -51,16 +51,16 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: service-1236
+            name: service1
             port:
-              number: 1236
+              number: 1241
   - host: https-example.foo.com
     http:
       paths:
-      - path: /health
+      - path: /hello
         pathType: Prefix
         backend:
           service:
-            name: service-1238
+            name: service2
             port:
-              number: 1238
+              number: 1242
