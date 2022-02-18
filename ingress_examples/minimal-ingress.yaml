@@ -32,6 +32,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: service-1236
+            name: service1
             port:
-              number: 1236
+              number: 1241
