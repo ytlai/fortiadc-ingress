@@ -18,12 +18,12 @@ spec:
     http:
       paths:
       - pathType: Prefix
-        path: "/"
+        path: "/info"
         backend:
           service:
             name: service1
             port:
-              number: 80
+              number: 1241
   - host: bar.foo.com
     http:
       paths:
@@ -33,5 +33,5 @@ spec:
           service:
             name: service2
             port:
-              number: 80
+              number: 1242
 
