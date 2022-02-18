@@ -1,9 +1,9 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress-wildcard-host
+  name: ingress-with-default-backend
   annotations: {
-    "virtual-server-ip" : "172.23.133.10",
+    "virtual-server-ip" : "172.23.133.65",
     "virtual-server-port" : "port1",
     "fortiadc-ip" : "10.0.100.133",
     "fortiadc-login" : "fad-login",
@@ -12,6 +12,11 @@ metadata:
 
 spec:
   ingressClassName: fadc-ingress-controller
+  defaultBackend:
+    service:
+      name: default-http-backend
+      port:
+        number: 80
   rules:
   - host: "foo.bar.com"
     http:
