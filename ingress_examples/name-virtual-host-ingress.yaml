@@ -23,7 +23,7 @@ spec:
           service:
             name: service3
             port:
-              number: 1241
+              number: 1245
   - host: bar.foo.com
     http:
       paths:
