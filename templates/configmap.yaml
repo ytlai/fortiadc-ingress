@@ -5,7 +5,7 @@ metadata:
 data:
   FortiadcVdom : {{ .Values.parameters.fortiadcVdom }}
   VirtualServerNatSrcPool : {{ .Values.parameters.virtualServerNatSrcPool }}
-  VirtualServerNatSrcPool: {{ .Values.parameters.virtualServerWafProfile }}
+  VirtualServerWafProfile: {{ .Values.parameters.virtualServerWafProfile }}
   VirtualServerAvProfile : {{ .Values.parameters.virtualServerAvProfile }}
   VirtualServerDosProfile : {{ .Values.parameters.virtualServerDosProfile }}
   VirtualServerCaptchaProfile : {{ .Values.parameters.virtualServerCaptchaProfile }}
