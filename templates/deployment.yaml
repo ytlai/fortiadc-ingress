@@ -31,9 +31,25 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          envFrom:
-          - configMapRef:
-              name: parameters
+          env:
+          - name: FortiadcVdom
+            value: {{ .Values.parameters.fortiadcVdom }}
+          - name: VirtualServerNatSrcPool
+            value: {{ .Values.parameters.virtualServerNatSrcPool }}
+          - name: VirtualServerWafProfile
+            value: {{ .Values.parameters.virtualServerWafProfile }}
+          - name: VirtualServerAvProfile
+            value: {{ .Values.parameters.virtualServerAvProfile }}
+          - name: VirtualServerDosProfile
+            value: {{ .Values.parameters.virtualServerDosProfile }}
+          - name: VirtualServerCaptchaProfile
+            value: {{ .Values.parameters.virtualServerCaptchaProfile }}
+          - name: VirtualServerPersistence
+            value: {{ .Values.parameters.virtualServerPersistence }}
+
+#   envFrom:
+#          - configMapRef:
+#              name: parameters
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
