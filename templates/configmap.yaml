@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: parameters
+data:
+  fortiadc-vdom : {{ .Values.parameters.fortiadc-vdom }}
+  virtual-server-nat-src-pool : {{ .Values.parameters.virtual-server-nat-src-pool }}
+  virtual-server-waf-profile : {{ .Values.parameters.virtual-server-waf-profile }}
+  virtual-server-av-profile : {{ .Values.parameters.virtual-server-av-profile }}
+  virtual-server-dos-profile : {{ .Values.parameters.virtual-server-dos-profile }}
+  virtual-server-captcha-profile : {{ .Values.parameters.virtual-server-captcha-profile }}
+  virtual-server-persistence : {{ .Values.parameters.virtual-server-persistence }}
