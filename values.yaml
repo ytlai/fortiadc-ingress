@@ -45,10 +45,10 @@ controller:
     controllerValue: "fortinet.com/fadc-ingress-controller"
 
 parameters:
-  fortiadc-vdom : "optional"
-  virtual-server-nat-src-pool : "optional"
-  virtual-server-waf-profile : "optional"
-  virtual-server-av-profile : "optional"
-  virtual-server-dos-profile : "optional"
-  virtual-server-captcha-profile : "optional"
-  virtual-server-persistence : "optional"
+  fortiadcVdom : "optional"
+  virtualServerNatSrcPool : "optional"
+  virtualServerWafProfile : "optional"
+  virtualServerAvProfile : "optional"
+  virtualServerDosProfile : "optional"
+  virtualServerCaptchaProfile : "optional"
+  virtualServerPersistence : "optional"
