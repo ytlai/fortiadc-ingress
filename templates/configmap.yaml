@@ -3,10 +3,10 @@ kind: ConfigMap
 metadata:
   name: parameters
 data:
-  fortiadc-vdom : {{ .Values.parameters.fortiadcVdom }}
-  virtual-server-nat-src-pool : {{ .Values.parameters.virtualServerNatSrcPool }}
-  virtual-server-waf-profile : {{ .Values.parameters.virtualServerWafProfile }}
-  virtual-server-av-profile : {{ .Values.parameters.virtualServerAvProfile }}
-  virtual-server-dos-profile : {{ .Values.parameters.virtualServerDosProfile }}
-  virtual-server-captcha-profile : {{ .Values.parameters.virtualServerCaptchaProfile }}
-  virtual-server-persistence : {{ .Values.parameters.virtualServerPersistence }}
+  FortiadcVdom : {{ .Values.parameters.fortiadcVdom }}
+  VirtualServerNatSrcPool : {{ .Values.parameters.virtualServerNatSrcPool }}
+  VirtualServerNatSrcPool: {{ .Values.parameters.virtualServerWafProfile }}
+  VirtualServerAvProfile : {{ .Values.parameters.virtualServerAvProfile }}
+  VirtualServerDosProfile : {{ .Values.parameters.virtualServerDosProfile }}
+  VirtualServerCaptchaProfile : {{ .Values.parameters.virtualServerCaptchaProfile }}
+  VirtualServerPersistence : {{ .Values.parameters.virtualServerPersistence }}
