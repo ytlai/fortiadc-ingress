@@ -1,11 +1,10 @@
 # Default values for fadc-k8s-ctrl.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
-#FortiADC Ingress Controller image from Dockerhub.com
+# FortiADC Ingress Controller image from Dockerhub.com
 image:
   repository: ytlai/fortiadc-k8s-ctrl
   pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
   tag: "e5.1"
 
 imagePullSecrets:
@@ -45,7 +44,7 @@ controller:
     default: true
     controllerValue: "fortinet.com/fadc-ingress-controller"
 # You can decide parameters defined in annotation of Ingress to be optional or mandatory.
-#FortiADC Ingress Controller will check the parameter if it marks mandatory.
+# FortiADC Ingress Controller will check the parameter if it marks mandatory.
 parameters:
   fortiadcVdom : "optional"
   virtualServerNatSrcPool : "optional"
