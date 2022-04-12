@@ -1,5 +1,5 @@
 
-# fortiadc-ingress
+# Fortiadc Ingress Controller
 
 # Deployment
 
