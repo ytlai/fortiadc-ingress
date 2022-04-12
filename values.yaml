@@ -5,7 +5,7 @@
 image:
   repository: ytlai/fortiadc-k8s-ctrl
   pullPolicy: IfNotPresent
-  tag: "e5.1"
+  tag: "e6.0"
 
 imagePullSecrets:
   - name: regcred
