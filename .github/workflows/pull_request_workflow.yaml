@@ -37,7 +37,7 @@ jobs:
       - name: tagging
         run: | 
           git config user.name "ytlai"
-          git config user.email lynn22414@gmail.com
+          git config user.email ytlai@fortinet.com
           git tag "${{ needs.tag.outputs.name }}" -m "Version:${{ needs.tag.outputs.name }}"
       #- name: Create Release
       #  id: create_release
