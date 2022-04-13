@@ -4,7 +4,7 @@ metadata:
   name: tls-example-ingress
   annotations: {
     "virtual-server-ip" : "172.23.133.11",
-    "virtual-server-port" : "port1",
+    "virtual-server-interface" : "port1",
     "fortiadc-ip" : "10.0.100.133",
     "fortiadc-login" : "fad-login",
     "fortiadc-vdom" : "root"
