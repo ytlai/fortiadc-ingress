@@ -4,7 +4,7 @@ metadata:
   name: ingress-with-default-backend
   annotations: {
     "virtual-server-ip" : "172.23.133.65",
-    "virtual-server-port" : "port1",
+    "virtual-server-interface" : "port1",
     "fortiadc-ip" : "10.0.100.133",
     "fortiadc-login" : "fad-login",
     "fortiadc-vdom" : "root"
