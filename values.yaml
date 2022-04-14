@@ -5,7 +5,7 @@
 image:
   repository: ytlai/fortiadc-k8s-ctrl
   pullPolicy: IfNotPresent
-  tag: "e6.0"
+  tag: "e6.7"
 
 imagePullSecrets:
   - name: regcred
@@ -46,7 +46,6 @@ controller:
 # You can decide parameters defined in annotation of Ingress to be optional or mandatory.
 # FortiADC Ingress Controller will check the parameter if it marks mandatory.
 parameters:
-  fortiadcVdom : "optional"
   virtualServerNatSrcPool : "optional"
   virtualServerWafProfile : "optional"
   virtualServerAvProfile : "optional"
