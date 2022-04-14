@@ -32,8 +32,6 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
-          - name: FortiadcVdom
-            value: {{ .Values.parameters.fortiadcVdom }}
           - name: VirtualServerNatSrcPool
             value: {{ .Values.parameters.virtualServerNatSrcPool }}
           - name: VirtualServerWafProfile
