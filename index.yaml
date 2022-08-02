@@ -10,5 +10,5 @@ entries:
     type: application
     urls:
     - https://github.com/ytlai/fortiadc-ingress/releases/latest/download/fortiadc-ingress.tar.gz
-    version: 0.1.0
+    version: 1.0.1
 generated: "2021-08-23T08:21:32.196501008Z"
